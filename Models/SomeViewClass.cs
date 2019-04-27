@@ -1,10 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace WebApplication5.Models
 {
+    [Serializable]
     public class SomeViewClass
     {
         public string SomeString { get; set; }

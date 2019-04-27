@@ -6,6 +6,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebApplication5.Models;
 
 namespace WebApplication5
 {
@@ -21,7 +22,7 @@ namespace WebApplication5
         {
             var application = (IApplicationCache)HttpContext.Current.Items["_ISPApplicationCache"];
 
-            application["cachethis"] = new object[] { "Highly Cachable stuff", DateTime.Now };
+            application["cachethis"] = new SomeViewClass { SomeString = "Highly Cachable stuff", someDate= DateTime.Now };
         }
 
         protected void Application_Start()

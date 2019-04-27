@@ -18,11 +18,8 @@ namespace WebApplication5.Controllers
             var application = (IApplicationCache)this.HttpContext.Items["_ISPApplicationCache"];
 
 
-            var someViewClass = new SomeViewClass
-            {
-                SomeString = (string)((object[])application["cachethis"])[0],
-                someDate = (DateTime)((object[])application["cachethis"])[1]
-            };
+            var someViewClass = (SomeViewClass)application["cachethis"];
+           
             return View(someViewClass);
             
         }
