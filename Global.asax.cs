@@ -20,9 +20,12 @@ namespace WebApplication5
 
         private void MvcApplication_PostAcquireRequestState(object sender, EventArgs e)
         {
-            var application = (IApplicationCache)HttpContext.Current.Items["_ISPApplicationCache"];
 
-            application["cachethis"] = new SomeViewClass { SomeString = "Highly Cachable stuff", someDate= DateTime.Now };
+            var application = (IApplicationCache)HttpContext.Current.Items["_ISPApplicationCache"];
+            if (!application.KeyExists("cachethis"))
+            {
+                application["cachethis"] = new SomeViewClass { SomeString = "Highly Cachable stuff", someDate = DateTime.Now };
+            }
         }
 
         protected void Application_Start()
