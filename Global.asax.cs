@@ -1,12 +1,10 @@
-﻿using ispsession.io.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using WebApplication5.Models;
+using ispsession.io;
 
 namespace WebApplication5
 {
@@ -21,7 +19,7 @@ namespace WebApplication5
         private void MvcApplication_PostAcquireRequestState(object sender, EventArgs e)
         {
 
-            var application = (IApplicationCache)HttpContext.Current.Items["_ISPApplicationCache"];
+            var application = HttpContext.Current.ApplicationCache();
             if (!application.KeyExists("cachethis"))
             {
                 application["cachethis"] = new SomeViewClass { SomeString = "Highly Cachable stuff", someDate = DateTime.Now };

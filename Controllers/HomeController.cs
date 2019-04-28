@@ -1,4 +1,5 @@
-﻿using ispsession.io.Interfaces;
+﻿using ispsession.io;
+using ispsession.io.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace WebApplication5.Controllers
             var ctr = (int)(Session["counter"] ?? 0);
             ctr++;
             Session["counter"] = ctr;
-            var application = (IApplicationCache)this.HttpContext.Items["_ISPApplicationCache"];
+            var application = HttpContext.ApplicationCache();
 
 
             var someViewClass = (SomeViewClass)application["cachethis"];
