@@ -1,4 +1,4 @@
-<img src="https://ispsession.io/images/Platipus3_Transparant_small.png" width="90" height="60" alt="logo"/> ISP Session for ASP.NET 4.x"
+<img src="https://ispsession.io/images/Platipus3_Transparant_small.png" width="90" height="60" alt="logo"/> ISP Session for ASP.NET 4.x
 
 # DemoISPSessionOnNet
 Demonstrates how to implement ISP Session for ASP.NET 4.x and ISP Cache
